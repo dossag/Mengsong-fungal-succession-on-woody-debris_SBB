@@ -6,12 +6,14 @@
 #source("http://bioconductor.org/biocLite.R")
 #biocLite("phyloseq")
 
+
 ###Install bioconductor from BiocManager
-#
-#if (!requireNamespace("BiocManager", quietly = TRUE))
+#if (!require("BiocManager", quietly = TRUE))
 #  install.packages("BiocManager")
-#BiocManager::install(version = "3.11")
+#BiocManager::install()
 #BiocManager::install("phyloseq")
+
+#
 
 ##Clean R'sbrain
 ###Ordered factor understanding
@@ -9465,7 +9467,7 @@ dim(biovenn_down_18mo_otu_all)
 subset_down_36mo_otu <- fungi_97pick_down_strict_initial_11[,subset_down_36]
 subset_down_36mo_otu[,"Total"] <- rowSums(subset_down_36mo_otu)
 subset_down_36mo_otu_order <- subset_down_36mo_otu[order(-subset_down_36mo_otu$Total),]###sort by descending order
-dim(biovenn_down_36mo_otu)
+#dim(biovenn_down_36mo_otu)
 ###exclude 0 otus
 biovenn_down_36mo_otu_all <- subset_down_36mo_otu_order[subset_down_36mo_otu_order$Total>0,]
 dim(biovenn_down_36mo_otu_all)
